@@ -1,0 +1,17 @@
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 108px 0;
+    &__wrapper {
+        margin: 0 68px;
+        width: 100%;
+        max-width: 750px;
+    }
+    &__inner {
+        display: flex;
+    }
+    &__img {
+        width: 100%;
+    }
+}
