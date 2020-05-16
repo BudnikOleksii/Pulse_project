@@ -4,4 +4,11 @@
     line-height: 1.2;
     font-weight: 700;
     color: $text-color;
+    text-transform: uppercase;
+    &_left {
+        text-align-last: left;
+        font-size: 36px;
+        line-height: 1.2;
+        color: #ffffff;
+    }
 }
