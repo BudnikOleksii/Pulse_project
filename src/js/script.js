@@ -204,10 +204,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const postData = async (url, data) => {
         let res = await fetch(url, {
             method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
             body: data
         });
 
-        return await res.text();
+        return await res.json();
     };
 
     forms.forEach(form => {
@@ -229,7 +232,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(form);
 
-            postData('server.php', formData)
+            // convert to json
+            const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+            postData('http://localhost:3000/requests', json)
                 .then(res => {
                     console.log(res);
                     statusImg.setAttribute('src', message.ok);
