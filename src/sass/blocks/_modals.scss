@@ -47,7 +47,16 @@
         margin-bottom: 15px;
     }
 }
+.status {
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: $text-color;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
 
-#consultation, #order, #thanks {
+#consultation, #order {
     display: none;
 }
