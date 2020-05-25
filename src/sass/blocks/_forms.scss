@@ -2,7 +2,7 @@
     margin-top: 36px;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
     input {
         height: 50px;
         background-color: #ffffff;
@@ -17,4 +17,7 @@
             margin-bottom: 20px;
         }
     }
+}
+.form__wrapper {
+    width: 300px;
 }
