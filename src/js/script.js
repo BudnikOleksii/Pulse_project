@@ -107,4 +107,71 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     toggleMoreList(moreLink);
     toggleMoreList(moreBack);
+
+    // Modals
+    const btnConsult = document.querySelectorAll('[data-consult]'),
+          btnOrder = document.querySelectorAll('.button_mini'),
+          close = document.querySelectorAll('.modal__close'),
+          btnSubmit =document.querySelectorAll('.button_submit'),
+          overlay = document.querySelector('.overlay'),
+          modalConsult = document.querySelector('#consultation'),
+          modalOrder = document.querySelector('#order'),
+          modalThanks = document.querySelector('#thanks'),
+          modals = document.querySelectorAll('.modal'),
+          scroll = calcScroll();
+
+    function showModal(modal) {
+        overlay.classList.add('animated', 'fadeIn');
+        modal.classList.add('animated', 'fadeIn');
+        overlay.style.display = "block";
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+        document.body.style.marginRight = `${scroll}px`;
+    }
+
+    function closeModal() {
+        overlay.style.display = "none";
+        modals.forEach(modal => modal.style.display = "none");
+        document.body.style.overflow = "";
+        document.body.style.marginRight = `0px`;
+    }
+
+    function bindModal(btns, modal) {
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (e.target) {
+                    e.preventDefault();
+                }
+                showModal(modal);
+            });
+        });
+    }
+
+    bindModal(btnConsult, modalConsult);
+    bindModal(btnOrder, modalOrder);
+
+    close.forEach(btn => {
+        btn.addEventListener('click', () => closeModal());
+    });
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeModal();
+        }
+    });
+
+    function calcScroll() {
+        let div = document.createElement('div');
+
+        div.style.width = '50px';
+        div.style.height = '50px';
+        div.style.overflow = 'scroll';
+        div.style.visibility = 'hidden';
+
+        document.body.appendChild(div);
+        let scrollWidth = div.offsetWidth - div.clientWidth;
+        div.remove();
+
+        return scrollWidth;
+    }
 });
