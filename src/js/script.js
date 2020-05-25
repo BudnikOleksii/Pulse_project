@@ -118,15 +118,17 @@ window.addEventListener('DOMContentLoaded', () => {
           modalOrder = document.querySelector('#order'),
           modalThanks = document.querySelector('#thanks'),
           modals = document.querySelectorAll('.modal'),
-          scroll = calcScroll();
+          scroll = calcScroll(),
+          modalTimerId = setInterval(showModal, 60000);
 
-    function showModal(modal) {
+    function showModal(modal = modalConsult) {
         overlay.classList.add('animated', 'fadeIn');
         modal.classList.add('animated', 'fadeIn');
         overlay.style.display = "block";
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
         document.body.style.marginRight = `${scroll}px`;
+        clearInterval(modalTimerId);
     }
 
     function closeModal() {
@@ -139,9 +141,6 @@ window.addEventListener('DOMContentLoaded', () => {
     function bindModal(btns, modal) {
         btns.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                if (e.target) {
-                    e.preventDefault();
-                }
                 showModal(modal);
             });
         });
@@ -160,6 +159,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && overlay.style.display === "block") {
+            closeModal();
+        }
+    });
+
     function calcScroll() {
         let div = document.createElement('div');
 
@@ -174,4 +179,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
         return scrollWidth;
     }
+
+    function showModalByScroll() {
+        let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+
+        if (window.pageYOffset + document.documentElement.clientHeight >= scrollHeight) {
+            showModal(modalConsult);
+            window.removeEventListener('scroll', showModalByScroll);
+        }
+    }
+
+    window.addEventListener('scroll', showModalByScroll);
 });
