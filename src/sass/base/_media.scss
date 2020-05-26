@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+    .container {
+        max-width: 740px;
+    }
+    .promo {
+        background-position: left;
+        &__wrapper {
+            margin-top: 65px;
+            align-items: center;
+        }
+        &__header {
+            line-height: 30px;
+        }
+    }
+}
