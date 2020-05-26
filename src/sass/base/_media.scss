@@ -20,6 +20,7 @@
         padding: 50px 0;
         &__descr {
             text-align: center;
+            margin-bottom: 25px;
         }
     }
     .title_left {
@@ -27,16 +28,247 @@
         font-size: 30px;
     }
     .form__wrapper {
-        width: 740px;
+        width: 100%;
     }
     .feed-form {
-        margin-left: 50%;
-        transform: translateX(-50%);
+        margin: 0 auto;
     }
     .carousel {
         padding: 50px 0;
         &__slide {
             height: 525px;
+        }
+    }
+    .catalog {
+        padding-bottom: 50px;
+        &__tabs {
+            margin-top: 50px;
+        }
+        &-item {
+            width: 240px;
+            &__wrapper {
+                height: 340px;
+            }
+            &__subtitle {
+                margin-top: 0;
+            }
+            &__descr {
+                margin: 10px 15px;
+                font-size: 13px;
+            }
+            &__footer {
+                display: block;
+                text-align: center;
+            }
+            &__list > li {
+                font-size: 13px;
+            }
+        }
+    }
+    .feed {
+        &__item {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 25px;
+            border: 2px solid $border-color;
+            &:nth-child(2) {
+                margin-top: 25px;
+            }
+        }
+        &__img {
+            margin-top: 15px;
+        }
+        &__text {
+            margin: 25px;
+            padding: 0;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 555px;
+    }
+    .header {
+        &__logo {
+            width: 200px;
+        }
+        &__official {
+            font-size: 10px;
+            span {
+                font-size: 16px;
+            }
+        }
+        &__phone {
+            font-size: 16px;
+        }
+    }
+    .promo {
+        &__header {
+            font-size: 30px;
+        }
+        &__subheader {
+            font-size: 16px;
+            line-height: 16px;
+        }
+        &__icons {
+            width: 380px;
+        }
+    }
+    .advantages {
+        &__wrapper {
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        &__item {
+            min-width: 300px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        &__descr > br {
+            display: none;
+        }
+    }
+    .carousel {
+        &__slide {
+            height: 385px;
+        }
+        &__prev, &__next {
+            display: none;
+        }
+    }
+    .catalog {        
+        &__tab {
+            width: 165px;
+            height: 40px;
+            line-height: 38px;
+            font-size: 16px;
+        }
+        &-item {
+            width: 275px;
+        }
+    }
+}
+@media (max-width: 575px) {    
+    .header {
+        flex-direction: column;
+        &__logo {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        &__official {
+            display: none;
+        }
+    }
+    .button {
+        margin-top: 15px;
+    }
+    .promo {
+        min-height: 490px;
+        padding-bottom: 37px;
+        &__wrapper {
+            margin-top: 45px;
+        }
+        &__header {
+            font-size: 23px;
+            line-height: 23px;
+        }
+        &__subheader {
+            font-size: 12px;
+            line-height: 0;
+        }
+        &__icons {
+            width: 300px;
+            margin-top: 30px;
+        }
+        &__icon {
+            width: 105px;
+            font-size: 11px;
+            img {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .title {
+        font-size: 22px;
+    }
+    .title_left {
+        font-size: 13px;
+    }
+    .advantages {
+        padding: 25px 0;
+        &__wrapper {
+            margin-top: 0;
+        }
+        &__subheader {
+            margin-top: 20px;
+        }
+        &__descr {
+            margin-top: 10px;
+        }
+    }
+    .consultation {
+        min-height: 457px;
+        padding: 35px 0;
+        &__descr {
+            font-size: 12px;
+        }
+    }
+    .carousel {
+        &__slide {
+            height: 235px;
+        }
+    }
+    .catalog {
+        padding-bottom: 40px;
+        &__tabs {
+            margin-top: 25px;
+        }
+        &__tab {
+            width: 92px;
+            height: 20px;
+            line-height: 18px;
+            font-size: 10px;
+            margin: 0 2px;
+        }
+        &__content {
+            margin-top: 45px;
+        }
+        &__content {
+            flex-direction: column;
+            align-items: center;
+        }
+    }    
+    .feed {
+        padding-bottom: 30px;
+        &__item {
+            border: none;
+        }
+        &__descr {
+            font-size: 11px;
+        }
+    }
+    .footer {
+        &__info {
+            width: 300px;
+            height: 170px;
+            padding: 15px;
+        }
+        &__addr {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 15px;
+        }
+    }
+    .modal {
+        width: 320px;
+        &__close {
+            top: 15px;
+            right: 15px;
+        }
+        &__form {
+            width: 100%;
         }
     }
 }
