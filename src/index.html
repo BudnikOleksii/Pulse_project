@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 </head>
     <body>
         <!-- Promo -->
-        <div class="promo">
+        <div id="up" class="promo">
             <div class="container">
                 <header class="header">
                     <a href="#" class="header__logo">
@@ -52,7 +52,7 @@
                     <button data-consult class="button button_main">заказать кОНСУЛЬТАЦИЮ</button>
                     <div class="promo__link">
                         или 
-                        <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
+                        <a href="#catalog">ПЕРЕЙТИ В КАТАЛОГ</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="advantages__item">
-                        <img src="icons/advantages/heart.png" alt="pulse" class="advantages__icon">
+                        <img src="icons/advantages/heart.png" alt="pulse" class="advantages__icon advantages__icon_animated">
                         <div class="advantages__subheader">Заботимся о здоровье</div>
                         <div class="advantages__descr">
                             Мы работаем для того, 
@@ -124,7 +124,7 @@
 
         <!-- Slider -->
         <div class="container">
-            <section class="carousel">
+            <div class="carousel">
                 <div class="carousel__prev">
                     <img src="icons/prev.png" alt="prev">
                 </div>
@@ -144,12 +144,12 @@
                 <div class="carousel__next">
                     <img src="icons/next.png" alt="next">
                 </div>
-            </section>
+            </div>
         </div>
         <!-- end of slider section -->
 
         <!-- Catalog section -->
-        <section class="catalog">
+        <section class="catalog" id="catalog">
             <div class="container">
                 <h2 class="title">Каталог пульсометров</h2>
                 <ul class="catalog__tabs">
@@ -516,7 +516,10 @@
         </div>
 
         <a href="#up" class="pageup">
-            <img src="icons/arrow_up.svg" alt="up">
+            <!-- <img src="icons/arrow_up.svg" alt="up"> -->
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="#c70101" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z"></path>
+            </svg>
         </a>
         
         <script src="js/script.js"></script>
