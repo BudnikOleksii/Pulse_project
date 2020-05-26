@@ -12,4 +12,31 @@
             line-height: 30px;
         }
     }
+    .advantages {
+        padding: 50px 0;
+    }
+    .consultation {
+        min-height: 520px;
+        padding: 50px 0;
+        &__descr {
+            text-align: center;
+        }
+    }
+    .title_left {
+        text-align: center;
+        font-size: 30px;
+    }
+    .form__wrapper {
+        width: 740px;
+    }
+    .feed-form {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .carousel {
+        padding: 50px 0;
+        &__slide {
+            height: 525px;
+        }
+    }
 }
