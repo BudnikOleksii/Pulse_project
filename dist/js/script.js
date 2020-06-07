@@ -340,8 +340,13 @@ window.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             let widthTop = document.documentElement.scrollTop,
-                hash = this.hash,
-                toBlock = document.querySelector(this.hash).getBoundingClientRect().top,
+                hash = this.hash;
+            
+            if (!this.hash) {
+                return;
+            }
+
+            let toBlock = document.querySelector(this.hash).getBoundingClientRect().top,
                 start = null;
 
             requestAnimationFrame(step);
