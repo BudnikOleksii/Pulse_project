@@ -1,4 +1,6 @@
-function validationMask() {
+function validationMask(selector) {
+    const inputs = document.querySelectorAll(selector);
+
     let setCursorPosition = (pos, elem) => {
         elem.focus();
 
@@ -37,8 +39,6 @@ function validationMask() {
         }
     }
     
-    const inputs = document.querySelectorAll('[name="phone"]');
-
     inputs.forEach(input => {
         input.addEventListener('input', createMask);
         input.addEventListener('focus', createMask);

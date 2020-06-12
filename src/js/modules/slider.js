@@ -1,7 +1,7 @@
-function slider() {
-    const prev = document.querySelector('.carousel__prev'),
-        next = document.querySelector('.carousel__next'),
-        slides = document.querySelectorAll('.carousel__slide');
+function slider(prevBtn, nextBtn, slidesSelector) {
+    const prev = document.querySelector(prevBtn),
+        next = document.querySelector(nextBtn),
+        slides = document.querySelectorAll(slidesSelector);
 
     let slideIndex = 1;
 

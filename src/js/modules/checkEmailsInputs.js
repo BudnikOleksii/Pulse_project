@@ -1,7 +1,7 @@
-function checkEmailsInputs() {
-    const emailInputs = document.querySelectorAll('[name="email"]');
+function checkEmailsInputs(selector) {
+    const emailInputs = document.querySelectorAll(selector);
 
-    // if (input.value.match(/\D/g)) {
+    // if (e.key.match(/[^a-z 0-9 @ \.]/ig)) {
     //     input.style.border = '1px solid red';
     // } else {
     //     input.style.border = 'none';
